@@ -60,7 +60,9 @@ begin
         lData: string;
       begin
         lData := Prop.AsString;
+        {2021-12-22 Property is coming in with spaces. Need to replace them with plus symbol.}
         lData := StringReplace(lData, ' ', '+', [rfReplaceAll]);
+        {---}
         Img := Base64ToImg(lData);
         try
           if Assigned(OnSignatureChanged) then
