@@ -1,5 +1,5 @@
 unit Vui.Signature.Pad;
-
+{$WARN SYMBOL_PLATFORM OFF}
 interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
@@ -26,13 +26,13 @@ implementation
 
 uses
   System.IOUtils
+, System.NetEncoding
   ;
 
 { TVuiSignaturePad }
 
 constructor TVuiSignaturePad.Create(AControl:TWinControl);
 var
-  BaseDir : string;
   lXtagDir: string;
   lHtmlDir: string;
 begin
